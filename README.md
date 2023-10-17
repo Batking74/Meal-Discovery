@@ -9,5 +9,3 @@ When I pick my ingredients
 Then I am presented with recipe options for specified ingredients
 When I choose a recipe
 Then I am provided with nutritional information about the meal.
-
-This is a test
