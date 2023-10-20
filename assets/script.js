@@ -46,35 +46,52 @@ function createButtons(testData) {
                 return response.json()
             })
             .then(function (data) {
+                console.log(data)
                 let totalCalories = 0;
-                // const nutritionItem = data[i].calories;
-                // console.log(j)
-                // totalCalories += j.calories;
-                // console.log(totalCalories)
-                // var totalCarbohydrates = 0;
-                // var totalCholesterol = 0;
-                // var totalSaturatedFat = 0;
-                // var totalTotalFat = 0;
-                // var totalFiber = 0;
-                // var totalPotassium = 0;
-                // var totalProtein = 0;
-                // var totalSodium = 0;
-                // var totalSugar = 0;
+                let totalCarbohydrates = 0;
+                let totalCholesterol = 0;
+                let totalSaturatedFat = 0;
+                let totalTotalFat = 0;
+                let totalFiber = 0;
+                let totalPotassium = 0;
+                let totalProtein = 0;
+                let totalSodium = 0;
+                let totalSugar = 0;
+
                 for(let nutritionFact of data) {
                     totalCalories += nutritionFact.calories;
+                    totalCarbohydrates += nutritionFact.carbohydrates_total_g;                    
+                    totalCholesterol += nutritionFact.cholesterol_mg;                   
+                    totalSaturatedFat += nutritionFact.fat_saturated_g;
+                    totalTotalFat += nutritionFact.fat_total_g;
+                    totalFiber += nutritionFact.fiber_g;
+                    totalPotassium += nutritionFact.potassium_mg;
+                    totalProtein += nutritionFact.protein_g;
+                    totalSodium += nutritionFact.sodium_mg;
+                    totalSugar += nutritionFact.sugar_g;
+                    
                 }
-
+                
+                console.log(totalCarbohydrates)
+                console.log(totalCholesterol)
+                console.log(totalSaturatedFat)
+                console.log(totalTotalFat)
+                console.log(totalFiber)
+                console.log(totalPotassium)
+                console.log(totalProtein)
+                console.log(totalSodium)
+                console.log(totalSugar)
                 console.log(totalCalories)
     
                     // ingredients based off of local storage or global variable.
-                //     return fetch(`https://api.api-ninjas.com/v1/recipe?query=${title}`, {
-                //         headers: {
-                //             'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
-                //         }
-                //     })
-                // })
-                // .then(function (response) {
-                //     return response.json()
+                    return fetch(`https://api.api-ninjas.com/v1/recipe?query=${title}`, {
+                        headers: {
+                            'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
+                        }
+                    })
+                })
+                .then(function (response) {
+                    return response.json()
                 })
         }
         )
