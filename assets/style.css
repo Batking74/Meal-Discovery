@@ -3,6 +3,9 @@
     --lightYellow: #CBCF9B;
     --brown: #78511B;
 }
+.navbar {
+    background-color: var(--yellow);
+}
 
 body {
     background-color: var(--lightYellow);
@@ -13,7 +16,7 @@ body {
     margin-top: 10px;
 }
 
-h3 {
+h3, h2 {
     color: var(--brown);
 }
 
