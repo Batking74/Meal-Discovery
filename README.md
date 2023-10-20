@@ -1,4 +1,37 @@
 # super-group-project
+## About
+This application will be used for health conscious people looking to increase their potential through proper dieting.
+
+## Istallation
+Insallation should not be necessary for this application.
+
+## Usage
+This app can be used to find and select recipes based on the desired nutritional content of a meal.
+
+
+## Contributing
+Brennan Mitchell, Nazir Knuckles, Luis Rubio, and Antonio Johnson.
+
+## License
+Open source student project.
+
+## Contact
+
+Antonio Johnson - 
+
+Nazir Knuckles - 
+
+Luis Rubio
+
+Brennan Mitchell - @mr_wait_music on twitter or brennanmitchell1192@gmail.com
+
+
+Project Link: https://mrwait-music.github.io/super-group-project/
+
+
+
+
+
 ## User Story
 ```
 As a health conscious cook, 
