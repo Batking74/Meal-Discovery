@@ -1,0 +1,19 @@
+:root {
+    --yellow: #E6DC00;
+    --lightYellow: #CBCF9B;
+    --brown: #78511B;
+}
+
+body {
+    background-color: var(--lightYellow);
+}
+
+.title{
+    text-align: center;
+    margin-top: 10px;
+}
+
+h3 {
+    color: var(--brown);
+}
+
