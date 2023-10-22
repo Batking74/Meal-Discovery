@@ -1,13 +1,13 @@
+/* Declaring Variables */
+:root {
+    --nav-header-font: Jacques Francois Shadow;
+}
+
 body {
     background-image: url(./IMG/Background-img.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     scroll-behavior: smooth;
-}
-
-/* Declaring Variables */
-:root {
-    --nav-header-font: Jacques Francois Shadow;
 }
 
 /* Start of Navigation */

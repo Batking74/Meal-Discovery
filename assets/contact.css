@@ -2,13 +2,21 @@
     --yellow: #E6DC00;
     --lightYellow: #CBCF9B;
     --brown: #78511B;
+    --nav-header-font: Jacques Francois Shadow;
 }
 .navbar {
-    background-color: #e8de17d0;
+    background-color: #e8de17d0; 
+    font-family: var(--nav-header-font);
 }
 
+.nav-icon {
+    width: 50px;
+    height: 60px;
+}
+
+
 body {
-    background-color: var(--lightYellow);
+    background: linear-gradient(45deg, #f9f2b0e8, #EEEA92, #f9f8d2);
 }
 
 .title{
@@ -18,9 +26,10 @@ body {
 
 h3, h2 {
     color: var(--brown);
+    font-weight: bold;
+    font-family: Hahmlet;
 }
 
-.nav-icon {
-    width: 50px;
-    height: 60px;
+p {
+    font-family: Fraunces;
 }
