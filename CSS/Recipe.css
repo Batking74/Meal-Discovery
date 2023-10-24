@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(45deg, #f9f2b0e8, #EEEA92, #f9f8d2);
+    text-align: center;
+    font-family: Kaisei-Decol;
+}
+
+/* Start of Navigation */
+nav {
+    background: #e8de17d0;
+    font-size: 25px;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 60px;
+}
+
+nav a {
+    font-size: 25px;
+    margin-right: 40px;
+    color: #000;
+    font-family: Jacques Francois ShadowF;
+    transition: 1s;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: Hahmlet;
+}
+
+h3, p {
+    font-family: Fraunces;
+}
+
+/* Start of Header Styles */
+img, h1 {
+    margin-top: 20px;
+}
+
+img {
+    width: 50%;
+    height: 400px;
+}
+
+/* Start of Recipe Ingredients Container
+    Start of Recipe Instructions Container
+    Start of Recipe Nutrition-Facts Container */
+#Recipe-Instructions-Container, #Recipe-Nutrition-Facts-Container, #Recipe-Ingredients-Container {
+    width: 900px;
+    margin: 100px auto auto auto;
+}
+
+
+/* Start of Nutrition Facts Section */
+#Nutrition-Facts {
+    margin-top: 50px;
+    font-size: 20px;
+    display: grid;
+    grid-template: repeat(6, 50px) / repeat(2, 300px);
+    justify-content: center;
+}
+
+
+/* Start of Footer */
+footer {
+    padding: 15px 0 1px 0;
+    font-size: 20px;
+    font-weight: bold;
+    background: #70492C;
+}
