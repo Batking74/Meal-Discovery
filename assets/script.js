@@ -1,9 +1,11 @@
 var userInput = $('#userInput');
 
+
+// function gathers potentially recipes based off of user search term
+
 function recipeSearch(event) {
     var getRecipe = `https://api.api-ninjas.com/v1/recipe?query=${userInput.val()}`;
 
-    // console.log(userInput.val())
     event.preventDefault()
     fetch(getRecipe, {
 
@@ -12,14 +14,10 @@ function recipeSearch(event) {
         }
     })
         .then(function (response) {
-            // console.log(response)
             return response.json()
         })
         .then(function (data) {
-            // console.log(data)
             createButtons(data)
-            // data.ingredients = data.ingredients.replaceAll('|', '\n');
-            // console.log(data.ingredients);
         })
 };
 
@@ -29,6 +27,8 @@ function recipeSearch(event) {
 
 $('#form').on('submit', recipeSearch);
 
+// function creates buttons for each recipe returned from recipe search
+// function also listens for button click and gathers nutritional data from 2nd API
 
 function createButtons(testData) {
     for (var recipe of testData) {
@@ -83,7 +83,6 @@ function createButtons(testData) {
                 console.log(totalSugar)
                 console.log(totalCalories)
     
-                    // ingredients based off of local storage or global variable.
                     return fetch(`https://api.api-ninjas.com/v1/recipe?query=${title}`, {
                         headers: {
                             'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
@@ -98,7 +97,3 @@ function createButtons(testData) {
     }
     }
     
-
-
-// Replace | with \n look into replaceall method. Regex-replace stuff. Split for loop and | = \n
-// encodeURI for clean inputs
