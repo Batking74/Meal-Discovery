@@ -1,5 +1,5 @@
 var userInput = $('#userInput');
-
+var formSubmit = document.getElementById("contact-form");
 
 // function gathers potentially recipes based off of user search term
 
@@ -97,3 +97,14 @@ function createButtons(testData) {
     }
     }
     
+formSubmit.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var data= new FormData(this);
+    for(var[key, value]of data){
+        console.log(key + value)
+    }
+    console.log(data.keys())
+    // console.log(event.target[0].value)
+
+
+});

@@ -4,7 +4,7 @@
 }
 
 body {
-    /* background-image: url(./IMG/Background-img.jpg); */
+    background-image: url(./IMG/Background-img.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     scroll-behavior: smooth;
