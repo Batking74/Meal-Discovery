@@ -1,99 +1,66 @@
 var userInput = $('#userInput');
-
-
-// function gathers potentially recipes based off of user search term
-
-function recipeSearch(event) {
-    var getRecipe = `https://api.api-ninjas.com/v1/recipe?query=${userInput.val()}`;
-
-    event.preventDefault()
-    fetch(getRecipe, {
-
-        headers: {
-            'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
-        }
-    })
-        .then(function (response) {
-            return response.json()
-        })
-        .then(function (data) {
-            createButtons(data)
-        })
-};
-
-
-
-
+var storageKey = 'RecipeInfo';
 
 $('#form').on('submit', recipeSearch);
 
+if(localStorage.length > 0) {
+    localStorage.clear();
+}
+
+// function gathers potentially recipes based off of user search term
+function recipeSearch(event) {
+    event.preventDefault();
+    if($('#recipes')[0].children.length > 0) $('#recipes')[0].innerHTML = '';
+    var getRecipe = `https://api.api-ninjas.com/v1/recipe?query=${userInput.val()}`;
+    var header = { 'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW' }
+    
+    fetch(getRecipe, { headers: header })
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        createButtons(data)
+    })
+};
+
+
 // function creates buttons for each recipe returned from recipe search
 // function also listens for button click and gathers nutritional data from 2nd API
-
 function createButtons(testData) {
-    for (var recipe of testData) {
-        var buttons = $(`<button> ${recipe.title} </button>`);
-        buttons.appendTo('#recipes');
-        buttons.on('click', function () {
-            var title = $(this).text();
-            var getRecipe = `https://api.api-ninjas.com/v1/nutrition?query=${title}`;
-            fetch(getRecipe, {
-                headers: {
-                    'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW'
-                }
-            })
-            .then(function (response) {
-                return response.json()
-            })
-            .then(function (data) {
-                console.log(data)
-                let totalCalories = 0;
-                let totalCarbohydrates = 0;
-                let totalCholesterol = 0;
-                let totalSaturatedFat = 0;
-                let totalTotalFat = 0;
-                let totalFiber = 0;
-                let totalPotassium = 0;
-                let totalProtein = 0;
-                let totalSodium = 0;
-                let totalSugar = 0;
+    let count = 0;
+    for (var i = 0; i < testData.length; i++) {
+        // Create Elements
+        var div = $(`<div class="Recipe-Container">`);
+        var imgs = $(`<img src="${getImage(testData[i].title)}">`);
+        var h3 = $(`<h6>`);
+        var buttons = $(`<button id="${count}" >View Recipe</button>`);
 
-                for(let nutritionFact of data) {
-                    totalCalories += nutritionFact.calories;
-                    totalCarbohydrates += nutritionFact.carbohydrates_total_g;                    
-                    totalCholesterol += nutritionFact.cholesterol_mg;                   
-                    totalSaturatedFat += nutritionFact.fat_saturated_g;
-                    totalTotalFat += nutritionFact.fat_total_g;
-                    totalFiber += nutritionFact.fiber_g;
-                    totalPotassium += nutritionFact.potassium_mg;
-                    totalProtein += nutritionFact.protein_g;
-                    totalSodium += nutritionFact.sodium_mg;
-                    totalSugar += nutritionFact.sugar_g;
-                    
-                }
-                
-                console.log(totalCarbohydrates)
-                console.log(totalCholesterol)
-                console.log(totalSaturatedFat)
-                console.log(totalTotalFat)
-                console.log(totalFiber)
-                console.log(totalPotassium)
-                console.log(totalProtein)
-                console.log(totalSodium)
-                console.log(totalSugar)
-                console.log(totalCalories)
-    
-                    return fetch(`https://api.api-ninjas.com/v1/recipe?query=${title}`, {
-                        headers: {
-                            'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
-                        }
-                    })
-                })
-                .then(function (response) {
-                    return response.json()
-                })
-        }
-        )
+        // Append Elements to HTML
+        h3[0].append(testData[i].title);
+        $('#recipes')[0].append(div[0]);
+        $('.Recipe-Container')[i].append(imgs[0]);
+        $('.Recipe-Container')[i].append(h3[0]);
+        $('.Recipe-Container')[i].append(buttons[0]);
+        
+        // Add Eventlisteners to buttons
+        buttons.on('click', function () {
+            var data = testData[parseInt(this.id)];
+            var imgSrc = $('.Recipe-Container')[parseInt(this.id)].children[0].src;
+            data['ImageUrl'] = imgSrc;
+            localStorage.setItem(storageKey, JSON.stringify(data));
+            location.replace('../HTML/Recipe.html');
+        })
+        count++;
     }
-    }
-    
+}
+
+// This function returns images dynamically
+function getImage() {
+    return '../IMG/shopping.png'
+}
+
+
+    // api_key=4316b01c99a1dbeabb1ab7278f73b452dc3257c034202c000ef97313c36037fc&q=Ribs&engine=google_images&name=images_results
+
+
+    // Google api key AIzaSyD37RbkzPjO1OSjdfsi7RCConjksnwjAYc

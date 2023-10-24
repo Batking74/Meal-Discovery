@@ -163,6 +163,8 @@ hr {
 
 #Find-Your-Recipe-Section div:hover {
     background: #7b6b16;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 #Find-Your-Recipe-Section a {
