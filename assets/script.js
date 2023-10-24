@@ -1,11 +1,9 @@
 var userInput = $('#userInput');
-// var getIngredient = `https://api.api-ninjas.com/v1/nutrition?query=${userInput}`;
-
 
 function recipeSearch(event) {
     var getRecipe = `https://api.api-ninjas.com/v1/recipe?query=${userInput.val()}`;
 
-    console.log(userInput.val())
+    // console.log(userInput.val())
     event.preventDefault()
     fetch(getRecipe, {
 
@@ -14,22 +12,93 @@ function recipeSearch(event) {
         }
     })
         .then(function (response) {
-            console.log(response)
-            // return response.json();
+            // console.log(response)
+            return response.json()
         })
-    // .then(function (data) {
-    //     console.log(data)
-    //     console.log('dfsd')
-
-    // });
+        .then(function (data) {
+            // console.log(data)
+            createButtons(data)
+            // data.ingredients = data.ingredients.replaceAll('|', '\n');
+            // console.log(data.ingredients);
+        })
 };
 
 
 
 
 
-
-
-
-
 $('#form').on('submit', recipeSearch);
+
+
+function createButtons(testData) {
+    for (var recipe of testData) {
+        var buttons = $(`<button> ${recipe.title} </button>`);
+        buttons.appendTo('#recipes');
+        buttons.on('click', function () {
+            var title = $(this).text();
+            var getRecipe = `https://api.api-ninjas.com/v1/nutrition?query=${title}`;
+            fetch(getRecipe, {
+                headers: {
+                    'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW'
+                }
+            })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                console.log(data)
+                let totalCalories = 0;
+                let totalCarbohydrates = 0;
+                let totalCholesterol = 0;
+                let totalSaturatedFat = 0;
+                let totalTotalFat = 0;
+                let totalFiber = 0;
+                let totalPotassium = 0;
+                let totalProtein = 0;
+                let totalSodium = 0;
+                let totalSugar = 0;
+
+                for(let nutritionFact of data) {
+                    totalCalories += nutritionFact.calories;
+                    totalCarbohydrates += nutritionFact.carbohydrates_total_g;                    
+                    totalCholesterol += nutritionFact.cholesterol_mg;                   
+                    totalSaturatedFat += nutritionFact.fat_saturated_g;
+                    totalTotalFat += nutritionFact.fat_total_g;
+                    totalFiber += nutritionFact.fiber_g;
+                    totalPotassium += nutritionFact.potassium_mg;
+                    totalProtein += nutritionFact.protein_g;
+                    totalSodium += nutritionFact.sodium_mg;
+                    totalSugar += nutritionFact.sugar_g;
+                    
+                }
+                
+                console.log(totalCarbohydrates)
+                console.log(totalCholesterol)
+                console.log(totalSaturatedFat)
+                console.log(totalTotalFat)
+                console.log(totalFiber)
+                console.log(totalPotassium)
+                console.log(totalProtein)
+                console.log(totalSodium)
+                console.log(totalSugar)
+                console.log(totalCalories)
+    
+                    // ingredients based off of local storage or global variable.
+                    return fetch(`https://api.api-ninjas.com/v1/recipe?query=${title}`, {
+                        headers: {
+                            'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW',
+                        }
+                    })
+                })
+                .then(function (response) {
+                    return response.json()
+                })
+        }
+        )
+    }
+    }
+    
+
+
+// Replace | with \n look into replaceall method. Regex-replace stuff. Split for loop and | = \n
+// encodeURI for clean inputs
