@@ -7,9 +7,8 @@
 }
 /* Start of navbar css */
 nav {
-    background-color: #e8de17d0; 
+    background: #e8de17d0;
     font-size: 25px;
-    /* justify-content: space-around */
 }
 
 nav a {
@@ -23,6 +22,19 @@ nav a {
 .nav-icon {
     width: 50px;
     height: 60px;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: Hahmlet;
+}
+
+h3, p {
+    font-family: Fraunces;
 }
 /* end of navbar css */
 

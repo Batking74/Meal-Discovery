@@ -1,6 +1,8 @@
-# super-group-project
+# Meal Discovery
 ## About
 This application will be used for health conscious people looking to increase their potential through proper dieting.
+
+![Meal Discovery - Google Chrome 10_24_2023 5_38_59 AM](https://github.com/mrwait-music/super-group-project/assets/80671350/949cc1d5-f298-4aba-bf08-0db33445e65f)
 
 ## Istallation
 Insallation should not be necessary for this application.
@@ -26,8 +28,9 @@ Luis Rubio
 Brennan Mitchell - @mr_wait_music on twitter or brennanmitchell1192@gmail.com
 
 
-Project Link: https://mrwait-music.github.io/super-group-project/
+Deployed Site: https://mrwait-music.github.io/super-group-project/
 
+GitHub Repo: https://github.com/mrwait-music/super-group-project
 
 
 
