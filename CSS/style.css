@@ -10,17 +10,6 @@ body {
     --nav-header-font: Jacques Francois Shadow;
 }
 
-body {
-    background-image: url(./IMG/Background-img.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    scroll-behavior: smooth;
-}
-
-
-
-
-
 /* Start of Navigation */
 nav {
     background: #e8de17d0;
