@@ -5,11 +5,13 @@
     --brown: #78511B;
     --nav-header-font: Jacques Francois Shadow;
 }
+
 /* Start of navbar css */
 nav {
     background: #e8de17d0;
     font-size: 25px;
 }
+
 
 nav a {
     font-size: 25px;
@@ -33,9 +35,11 @@ h2 {
     font-family: Hahmlet;
 }
 
-h3, p {
+h3,
+p {
     font-family: Fraunces;
 }
+
 /* end of navbar css */
 
 /* Applying same background color to contact html as index html  */
@@ -43,12 +47,13 @@ body {
     background: linear-gradient(45deg, #f9f2b0e8, #EEEA92, #f9f8d2);
 }
 
-.title{
+.title {
     text-align: center;
     margin-top: 10px;
 }
 
-h3, h2 {
+h3,
+h2 {
     color: var(--brown);
     font-weight: bold;
     font-family: Hahmlet;

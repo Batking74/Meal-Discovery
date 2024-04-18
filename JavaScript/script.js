@@ -3,24 +3,24 @@ var storageKey = 'RecipeInfo';
 
 $('#form').on('submit', recipeSearch);
 
-if(localStorage.length > 0) {
+if (localStorage.length > 0) {
     localStorage.clear();
 }
 
 // function gathers potentially recipes based off of user search term
 function recipeSearch(event) {
     event.preventDefault();
-    if($('#recipes')[0].children.length > 0) $('#recipes')[0].innerHTML = '';
+    if ($('#recipes')[0].children.length > 0) $('#recipes')[0].innerHTML = '';
     var getRecipe = `https://api.api-ninjas.com/v1/recipe?query=${userInput.val()}`;
     var header = { 'X-Api-Key': '95B1uzEGa6q38k9hp6ChSQ==FiRE0oDvehzoCYPW' }
-    
+
     fetch(getRecipe, { headers: header })
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        createButtons(data)
-    })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            createButtons(data)
+        })
 };
 
 
@@ -41,7 +41,7 @@ function createButtons(testData) {
         $('.Recipe-Container')[i].append(imgs[0]);
         $('.Recipe-Container')[i].append(h3[0]);
         $('.Recipe-Container')[i].append(buttons[0]);
-        
+
         // Add Eventlisteners to buttons
         buttons.on('click', function () {
             var data = testData[parseInt(this.id)];
@@ -56,11 +56,11 @@ function createButtons(testData) {
 
 // This function returns images dynamically
 function getImage() {
-    return '../IMG/shopping.png'
+    return '../Images/shopping.png'
 }
 
 
-    // api_key=4316b01c99a1dbeabb1ab7278f73b452dc3257c034202c000ef97313c36037fc&q=Ribs&engine=google_images&name=images_results
+// api_key=4316b01c99a1dbeabb1ab7278f73b452dc3257c034202c000ef97313c36037fc&q=Ribs&engine=google_images&name=images_results
 
 
-    // Google api key AIzaSyD37RbkzPjO1OSjdfsi7RCConjksnwjAYc
+// Google api key AIzaSyD37RbkzPjO1OSjdfsi7RCConjksnwjAYc

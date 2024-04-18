@@ -1,5 +1,5 @@
 body {
-    background-image: url(../IMG/Background-img.jpg);
+    background-image: url('../Images/Background-img.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     scroll-behavior: smooth;
@@ -38,7 +38,8 @@ h2 {
     font-family: Hahmlet;
 }
 
-h3, p {
+h3,
+p {
     font-family: Fraunces;
 }
 
@@ -89,7 +90,8 @@ hr {
 
 
 /* Start of Benefits Section */
-#benefits-section, #Find-Your-Recipe-Section {
+#benefits-section,
+#Find-Your-Recipe-Section {
     margin-top: 100px;
 }
 

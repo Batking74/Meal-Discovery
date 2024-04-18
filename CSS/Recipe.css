@@ -10,6 +10,7 @@ nav {
     font-size: 25px;
 }
 
+
 .nav-icon {
     width: 50px;
     height: 60px;
@@ -32,12 +33,14 @@ h2 {
     font-family: Hahmlet;
 }
 
-h3, p {
+h3,
+p {
     font-family: Fraunces;
 }
 
 /* Start of Header Styles */
-img, h1 {
+img,
+h1 {
     margin-top: 20px;
 }
 
@@ -49,7 +52,9 @@ img {
 /* Start of Recipe Ingredients Container
     Start of Recipe Instructions Container
     Start of Recipe Nutrition-Facts Container */
-#Recipe-Instructions-Container, #Recipe-Nutrition-Facts-Container, #Recipe-Ingredients-Container {
+#Recipe-Instructions-Container,
+#Recipe-Nutrition-Facts-Container,
+#Recipe-Ingredients-Container {
     width: 900px;
     margin: 100px auto auto auto;
 }
