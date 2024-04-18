@@ -1,0 +1,175 @@
+body {
+    background-image: url('../Images/Background-img.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    scroll-behavior: smooth;
+}
+
+/* Declaring Variables */
+:root {
+    --nav-header-font: Jacques Francois Shadow;
+}
+
+/* Start of Navigation */
+nav {
+    background: #e8de17d0;
+    font-size: 25px;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 60px;
+}
+
+nav a {
+    font-size: 25px;
+    margin-right: 40px;
+    color: #000;
+    font-family: var(--nav-header-font);
+    transition: 1s;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: Hahmlet;
+}
+
+h3,
+p {
+    font-family: Fraunces;
+}
+
+/* Header Styles */
+header {
+    margin-top: 180px;
+    text-align: center;
+    background: #e8de17ae;
+    font-family: var(--nav-header-font);
+    padding: 4% 0 4% 0;
+}
+
+header h1 {
+    font-size: 50px;
+}
+
+main {
+    background: linear-gradient(45deg, #f9f2b0e8, #EEEA92, #f9f8d2);
+    margin-top: 18%;
+    padding: 100px;
+}
+
+hr {
+    margin: 0 10% 0 10%;
+    opacity: 1.1;
+}
+
+
+
+
+/* Start of About Section */
+.about-message {
+    width: 60%;
+}
+
+.About-Msg-container div img {
+    width: 130%;
+    height: 250px;
+}
+
+.About-section-container {
+    position: relative;
+    left: 5%;
+}
+
+
+
+
+
+/* Start of Benefits Section */
+#benefits-section,
+#Find-Your-Recipe-Section {
+    margin-top: 100px;
+}
+
+.benefit-section1-container {
+    margin: 2% 8% 5% 8%;
+}
+
+/* Styling each image in the benefits section1 */
+.benefits-section-img-container {
+    display: grid;
+    grid-template: repeat(2, 230px) / repeat(2, 230px);
+    margin: 0 auto 0 0;
+}
+
+.benefits-section-img-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: solid #000000af 3px;
+}
+
+/* Styling each image in the benefits section2 */
+.benefits-section2-img-container {
+    grid-template: repeat(2, 300px) / repeat(3, 370px);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.benefits-section2-img-container img {
+    width: 220px;
+    height: 220px;
+    border-radius: 120px;
+    background: #e39b65;
+    padding: 7px;
+    border: solid 2px #000;
+    transition: 1s;
+}
+
+.benefits-section2-img-container img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Start of Find Your Recipe Section */
+#Find-Your-Recipe-Section img {
+    margin-top: 30px;
+    width: 60%;
+}
+
+#Find-Your-Recipe-Section div {
+    background: #B09C37;
+    padding: 14px 0 14px 0;
+    margin: 20px 44% 100px 44%;
+    border-radius: 40px;
+    transition: 1s;
+}
+
+#Find-Your-Recipe-Section div:hover {
+    background: #7b6b16;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#Find-Your-Recipe-Section a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+/* Start of Footer */
+footer {
+    padding: 15px 0 1px 0;
+    font-size: 20px;
+    font-weight: bold;
+    background: #70492C;
+}
