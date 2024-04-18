@@ -2,6 +2,6 @@
 
 
 
-Deployed Site: 
+Deployed Site: https://batking74.github.io/Meal-Discovery/
 
-GitHub Repo: 
+GitHub Repo: https://github.com/Batking74/Meal-Discovery
