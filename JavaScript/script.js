@@ -56,7 +56,7 @@ function createButtons(testData) {
 
 // This function returns images dynamically
 function getImage() {
-    return '../Images/shopping.png'
+    return '../Images/shopping.webp'
 }
 
 
